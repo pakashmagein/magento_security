@@ -1,0 +1,18 @@
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile ../var/.htpwd
+Require valid-user
+order allow,deny
+allow from 122.163.149.211
+Satisfy Any
+<IfModule mod_deflate.c>
+
+    RemoveOutputFilter DEFLATE
+    RemoveOutputFilter GZIP
+
+</IfModule>
+
+<Files ~ "\.(cfg|ini|xml)$">
+    order allow,deny
+    allow from all
+</Files> 
